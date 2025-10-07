@@ -3,7 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
-const Index = () => {
+export const Index = () => {
   const [selectedSolution1, setSelectedSolution1] = useState<string | null>(
     null
   );
@@ -108,7 +108,7 @@ const Index = () => {
           result: "Précipité blanc",
           equation: "NaCl + 2NaOH → Na₂SO₄ + 2H₂O",
           interpretation: "Formation d'un complexe de sodium",
-          color: "hsl(var(--result-transparent))",
+          color: "hsl(var(--result-white))",
         };
       } else if (mixture === "C + D") {
         result = {
@@ -141,7 +141,8 @@ const Index = () => {
       } else if (mixture === "D + E") {
         result = {
           result: "Solution rougeâtre",
-          equation: "AgNO₃ + NaCl → aucune réaction visible mais on trouvait ça plus joli en rouge",
+          equation:
+            "AgNO₃ + NaCl → aucune réaction visible mais on trouvait ça plus joli en rouge",
           interpretation: "Les deux sels restent dissous",
           color: "hsl(var(--result-red))",
         };
@@ -159,10 +160,39 @@ const Index = () => {
     setIsMixing(false);
   };
 
+  const morseData = [
+    // Lettres
+    { char: "A", morse: ".-" },
+    { char: "B", morse: "-..." },
+    { char: "C", morse: "-.-." },
+    { char: "D", morse: "-.." },
+    { char: "E", morse: "." },
+    { char: "F", morse: "..-." },
+    { char: "G", morse: "--." },
+    { char: "H", morse: "...." },
+    { char: "I", morse: ".." },
+    { char: "J", morse: ".---" },
+    { char: "K", morse: "-.-" },
+    { char: "L", morse: ".-.." },
+    { char: "M", morse: "--" },
+    { char: "N", morse: "-." },
+    { char: "O", morse: "---" },
+    { char: "P", morse: ".--." },
+    { char: "Q", morse: "--.-" },
+    { char: "R", morse: ".-." },
+    { char: "S", morse: "..." },
+    { char: "T", morse: "-" },
+    { char: "U", morse: "..-" },
+    { char: "V", morse: "...-" },
+    { char: "W", morse: ".--" },
+    { char: "X", morse: "-..-" },
+    { char: "Y", morse: "-.--" },
+    { char: "Z", morse: "--.." },
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-card p-4 md:p-8">
       <div className="max-w-6xl mx-auto space-y-8 animate-in fade-in duration-700">
-        {/* Header */}
         <header className="text-center space-y-4 py-8">
           <div className="inline-block">
             <Badge
@@ -173,12 +203,112 @@ const Index = () => {
             </Badge>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-foreground tracking-tight">
-            Fiche de résultats expérimentaux
+            Notes concernant le technicien R. Brohan - module simon-protocol
+          </h1>
+          <div className="flex flex-col md:flex-row gap-4 justify-center items-center text-muted-foreground font-mono text-sm">
+            <p>Objet : Evaluation psycho-physiologique du sujet</p>
+            <span className="hidden md:inline">•</span>
+            <p>Date : 06/10/2025</p>
+            <span className="hidden md:inline">•</span>
+            <p>Chercheur : Dr. S. Lonefy</p>
+          </div>
+        </header>
+
+        <Card className="overflow-hidden border-primary/30 bg-card/50 backdrop-blur-sm shadow-lg">
+          <div className="p-6 md:p-8 space-y-6">
+            <div className="text-center space-y-2">
+              <h2 className="text-2xl font-bold text-foreground">Synthèse</h2>
+              <br />
+              <p className="text text-justify">
+                Après plusieurs séances d’observation et d’entretiens cliniques
+                simulés, le sujet R. Brohan présente une singularité de la
+                perception chromatique décrite comme une permutation stable et
+                non standardisée des teintes primaires. Les tests informels
+                montrent une correspondance interne des couleurs qui diffère
+                systématiquement des conventions visuelles habituelles. Le
+                phénomène est constant dans un large éventail de conditions
+                d’éclairage et s’accompagne d’une adaptation cognitive
+                partielle, ce qui rend le sujet fonctionnel mais vulnérable aux
+                ambiguïtés colorées dans les tâches rapides.
+              </p>
+              <br />
+              <p className="text text-justify">
+                Observations complémentaires : Réponses verbales rapides parfois
+                retardées lorsqu’on lui demande d’identifier des couleurs.
+                Comportement calme; aucune détresse apparente liée à la
+                perception colorée.
+              </p>
+            </div>
+          </div>
+        </Card>
+
+        <Card className="overflow-hidden border-primary/30 bg-card/50 backdrop-blur-sm shadow-lg">
+          <div className="p-6 md:p-8 space-y-6">
+            <div className="text-center space-y-2">
+              <h2 className="text-2xl font-bold text-foreground">IMPORTANT</h2>
+              <br />
+              <p>R. Brohan voit ROUGE là où les autres voient BLEU.</p>
+              <p>Il voit BLEU là où les autres voient JAUNE.</p>
+              <p>Il voit JAUNE là où les autres voient VERT.</p>
+              <p>Il voit VERT là où les autres voient ROUGE.</p>
+            </div>
+          </div>
+        </Card>
+
+        <header className="text-center space-y-6 py-8">
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground tracking-tight">
+            Pages provenant d'un dossier d'archive - module EPS-morse
+          </h1>
+          <div className="flex flex-col md:flex-row gap-4 justify-center items-center text-muted-foreground font-mono text-sm">
+            <p>Objet : Guides de traduction de messages codés</p>
+            <span className="hidden md:inline">•</span>
+            <p>Date : 07/10/2025</p>
+            <span className="hidden md:inline">•</span>
+            <p>Chercheur : Dr. A. Ralby</p>
+          </div>
+        </header>
+
+        <Card className="overflow-hidden border-primary/30 bg-card/50 backdrop-blur-sm shadow-lg">
+          <div className="p-6 md:p-8 space-y-6 text-center space-y-2">
+            <h2 className="text-2xl font-bold text-foreground">
+              Code Morse International
+            </h2>
+            <div className="max-w-xl mx-auto p-4 rounded-2xl shadow ">
+              <table className="w-full border-collapse text-center bg-transparent text-white">
+                <thead>
+                  <tr className="bg-transparent">
+                    <th className="border border-white px-2 py-1">Caractère</th>
+                    <th className="border border-white px-2 py-1">
+                      Code Morse
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {morseData.map((item) => (
+                    <tr key={item.char}>
+                      <td className="border border-white px-2 py-1 font-bold">
+                        {item.char}
+                      </td>
+                      <td className="border border-white px-2 py-1 font-mono">
+                        {item.morse}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <br />
+          </div>
+        </Card>
+
+        <header className="text-center space-y-6 py-8">
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground tracking-tight">
+            Fiche de résultats expérimentaux - module X-Chem
           </h1>
           <div className="flex flex-col md:flex-row gap-4 justify-center items-center text-muted-foreground font-mono text-sm">
             <p>Objet : Étude de la formation d'un précipité caractéristique</p>
             <span className="hidden md:inline">•</span>
-            <p>Date : 07/10/2025</p>
+            <p>Date : 08/10/2025</p>
             <span className="hidden md:inline">•</span>
             <p>Chercheur : Dr. Y. Gueriac</p>
           </div>
@@ -190,17 +320,20 @@ const Index = () => {
               <h2 className="text-2xl font-bold text-foreground">
                 Résolvez les équations
               </h2>
+              <br />
               <p className="text">( x - 2 ) ( x + 3 ) = -4</p>
               <p className="text"> 4x - 7 - 3( x + 1 ) = 5 </p>
             </div>
-            <p className="text font-bold"> Les résultats figurent parmi les suivants :</p>
-             <div className="grid grid-cols-5 gap-4 md:gap-6">
+            <p className="text font-bold">
+              Les résultats figurent parmi les suivants :
+            </p>
+            <div className="grid grid-cols-5 gap-4 md:gap-6">
               <p>Résultat A = 9</p>
               <p>Résultat B = 15</p>
               <p>Résultat C = -2</p>
               <p>Résultat D = 2</p>
               <p>Résultat E = 3</p>
-             </div>
+            </div>
           </div>
         </Card>
 
@@ -212,7 +345,8 @@ const Index = () => {
                 Effectuez vos propres mélanges
               </h2>
               <p className="text-muted-foreground">
-                Sélectionnez deux solutions pour observer la réaction
+                Sélectionnez deux solutions pour observer la réaction et
+                déterminer la couleur du câble à débrancher.
               </p>
             </div>
 
@@ -363,5 +497,3 @@ const Index = () => {
     </div>
   );
 };
-
-export default Index;
