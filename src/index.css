@@ -49,8 +49,11 @@ All colors MUST be HSL.
     --solution-b: 160 80% 45%;
     --solution-c: 0 0% 85%;
     --solution-d: 240 100% 60%;
+    --solution-e: 30 100% 50%;
     --result-blue: 210 100% 60%;
-    --result-transparent: 0 0% 95%;
+    --result-brown: 25 60% 40%;
+    --result-white: 0 0% 95%;
+    --result-red: 0 80% 50%;
 
     --sidebar-background: 0 0% 98%;
 

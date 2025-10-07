@@ -43,6 +43,12 @@ const Index = () => {
       color: "hsl(var(--solution-d))",
       description: "NaCl",
     },
+    {
+      id: "E",
+      name: "Solution E",
+      color: "hsl(var(--solution-e))",
+      description: "AgNO₃",
+    },
   ];
 
   const handleSolutionClick = (solutionId: string) => {
@@ -95,7 +101,7 @@ const Index = () => {
           result: "Solution incolore",
           equation: "NaCl + HCl → aucune réaction visible",
           interpretation: "Mélange neutre de sels et d’acide",
-          color: "hsl(var(--result-white))",
+          color: "hsl(var(--result-transparent))",
         };
       } else if (mixture === "B + D") {
         result = {
@@ -109,7 +115,35 @@ const Index = () => {
           result: "Solution incolore",
           equation: "CuSO₄ + NaCl → aucune réaction visible",
           interpretation: "Les deux sels restent dissous",
+          color: "hsl(var(--result-transparent))",
+        };
+      } else if (mixture === "A + E") {
+        result = {
+          result: "Précipité blanc",
+          equation: "AgNO₃ + HCl → AgCl ↓ + HNO₃",
+          interpretation: "Formation d'un précipité de chlorure d'argent",
           color: "hsl(var(--result-white))",
+        };
+      } else if (mixture === "B + E") {
+        result = {
+          result: "Solution incolore",
+          equation: "AgNO₃ + NaOH → aucune réaction visible",
+          interpretation: "Ions argent restent en solution",
+          color: "hsl(var(--result-transparent))",
+        };
+      } else if (mixture === "C + E") {
+        result = {
+          result: "Précipité brun",
+          equation: "AgNO₃ + CuSO₄ → Ag + Cu(NO₃)₂",
+          interpretation: "Réduction de l'argent métallique",
+          color: "hsl(var(--result-brown))",
+        };
+      } else if (mixture === "D + E") {
+        result = {
+          result: "Solution rougeâtre",
+          equation: "AgNO₃ + NaCl → aucune réaction visible mais on trouvait ça plus joli en rouge",
+          interpretation: "Les deux sels restent dissous",
+          color: "hsl(var(--result-red))",
         };
       }
 
@@ -160,11 +194,12 @@ const Index = () => {
               <p className="text"> 4x - 7 - 3( x + 1 ) = 5 </p>
             </div>
             <p className="text font-bold"> Les résultats figurent parmi les suivants :</p>
-             <div className="grid grid-cols-4 gap-4 md:gap-6">
+             <div className="grid grid-cols-5 gap-4 md:gap-6">
               <p>Résultat A = 9</p>
               <p>Résultat B = 15</p>
               <p>Résultat C = -2</p>
-              <p>Résultat D = 1</p>
+              <p>Résultat D = 2</p>
+              <p>Résultat E = 3</p>
              </div>
           </div>
         </Card>
@@ -182,7 +217,7 @@ const Index = () => {
             </div>
 
             {/* Solutions */}
-            <div className="grid grid-cols-4 gap-4 md:gap-6">
+            <div className="grid grid-cols-5 gap-4 md:gap-6">
               {solutions.map((solution) => (
                 <button
                   key={solution.id}
