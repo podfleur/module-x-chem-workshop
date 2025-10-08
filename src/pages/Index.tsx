@@ -257,11 +257,17 @@ export const Index = () => {
           <div className="p-6 md:p-8 space-y-6">
             <div className="text-center space-y-2">
               <h2 className="text-2xl font-bold text-foreground">IMPORTANT</h2>
+              <p className="text-muted-foreground">
+                Indice : penser à la première lettre de chaque couleur
+              </p>
               <br />
-              <p>R. Brohan voit ROUGE là où les autres voient BLEU.</p>
-              <p>Il voit BLEU là où les autres voient JAUNE.</p>
-              <p>Il voit JAUNE là où les autres voient VERT.</p>
-              <p>Il voit VERT là où les autres voient ROUGE.</p>
+              <p>
+                R. Brohan s'est trompé dans le cablâge des boutons, il voit la
+                couleur 18 là où les autres voient la couleur 2.
+              </p>
+              <p>Il voit 2 là où les autres voient 10.</p>
+              <p>Il voit 10 là où les autres voient 22.</p>
+              <p>Il voit 22 là où les autres voient 18.</p>
             </div>
           </div>
         </Card>
