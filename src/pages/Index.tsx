@@ -188,6 +188,17 @@ export const Index = () => {
     { char: "X", morse: "-..-" },
     { char: "Y", morse: "-.--" },
     { char: "Z", morse: "--.." },
+
+    { char: "0", morse: "-----" },
+    { char: "1", morse: ".----" },
+    { char: "2", morse: "..---" },
+    { char: "3", morse: "...--" },
+    { char: "4", morse: "....-" },
+    { char: "5", morse: "....." },
+    { char: "6", morse: "-...." },
+    { char: "7", morse: "--..." },
+    { char: "8", morse: "---.." },
+    { char: "9", morse: "----." },
   ];
 
   return (
