@@ -258,7 +258,8 @@ export const Index = () => {
             <div className="text-center space-y-2">
               <h2 className="text-2xl font-bold text-foreground">IMPORTANT</h2>
               <p className="text-muted-foreground">
-                Indice : penser à la première lettre de chaque couleur
+                Indice : pensez à l'ordre alphabétique de la première lettre de
+                chaque couleur
               </p>
               <br />
               <p>
@@ -269,6 +270,10 @@ export const Index = () => {
               <p>Il voit 10 là où les autres voient 22.</p>
               <p>Il voit 22 là où les autres voient 18.</p>
             </div>
+            <p className="text font-bold">
+              Consignes : Appuyez une fois sur n'importe quel bouton du moddule
+              pour commencer.
+            </p>
           </div>
         </Card>
 
@@ -284,6 +289,32 @@ export const Index = () => {
             <p>Chercheur : Dr. A. Ralby</p>
           </div>
         </header>
+
+        <Card className="overflow-hidden border-primary/30 bg-card/50 backdrop-blur-sm shadow-lg">
+          <div className="p-6 md:p-8 space-y-6 text-center space-y-2">
+            <h2 className="text-2xl font-bold text-foreground">
+              Message envoyé par le docteur Alman Ralby
+            </h2>
+            <br />
+            <div className="inline-block">
+              <p className="text text-justify">Cher agent,</p>
+              <br />
+              <p className="text text-justify">
+                Décodez le message reçu, puis entrez la séquence correspondante
+                à l’aide du bouton prévu sur le module.
+              </p>
+              <p className="text text-justify">
+                L’accès au protocole de stabilisation nécessite la transmission
+                d’un code en Morse.
+              </p>
+              <br />
+              <p className="text text-justify"> Décodez le message reçu, puis entrez la séquence correspondante à l’aide du bouton prévu sur le module.</p>
+              <p className="text text-justify">La précision est essentielle : une erreur pourrait compromettre l’intégrité de l’antidote.</p>
+            <br />
+              <p className="text text-justify font-bold "> - Département de Sécurité Biologique, OMS</p>
+            </div>
+          </div>
+        </Card>
 
         <Card className="overflow-hidden border-primary/30 bg-card/50 backdrop-blur-sm shadow-lg">
           <div className="p-6 md:p-8 space-y-6 text-center space-y-2">
@@ -337,17 +368,21 @@ export const Index = () => {
               <h2 className="text-2xl font-bold text-foreground">
                 Résolvez les équations
               </h2>
+              <p className="text-muted-foreground">
+                N'hésitez pas à utiliser du papier et un crayon !
+              </p>
               <br />
-              <p className="text">( x - 2 ) ( x + 3 ) = -4</p>
-              <p className="text"> 4x - 7 - 3( x + 1 ) = 5 </p>
+              <p className="text">Solution ? : 2 + 4( x + 3 ) = 2 </p>
+              <p className="text">Solution ?? : 4x - 7 - 3( x + 1 ) = 5 </p>
             </div>
             <p className="text font-bold">
-              Les résultats figurent parmi les suivants :
+              Sélectionnez les deux résultats corrects parmi les propositions
+              suivantes :
             </p>
             <div className="grid grid-cols-5 gap-4 md:gap-6">
               <p>Résultat A = 9</p>
               <p>Résultat B = 15</p>
-              <p>Résultat C = -2</p>
+              <p>Résultat C = -3</p>
               <p>Résultat D = 2</p>
               <p>Résultat E = 3</p>
             </div>
